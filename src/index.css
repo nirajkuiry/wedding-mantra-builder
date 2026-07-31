@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at 20% -10%, rgba(212, 175, 55, 0.08), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.05), transparent 35%), #0b0b0b;
+  min-height: 100vh;
+}
+
+::selection {
+  background: #d4af37;
+  color: #0b0b0b;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@layer components {
+  .glass-card {
+    @apply relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-glass;
+  }
+
+  .gold-hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gold/60 to-transparent;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-foil bg-[length:200%_200%]
+      px-7 py-3 font-body text-sm font-semibold tracking-wide text-ink shadow-goldGlow
+      transition-[background-position,transform] duration-500 hover:bg-[position:100%_0] hover:scale-[1.02]
+      active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-transparent
+      px-6 py-3 font-body text-sm font-medium text-ivory/80 transition
+      hover:border-gold/60 hover:text-gold disabled:opacity-30 disabled:pointer-events-none;
+  }
+
+  .field-label {
+    @apply mb-1.5 block font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-ivory/50;
+  }
+
+  .field-input {
+    @apply w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 font-body text-sm text-ivory
+      placeholder:text-ivory/30 outline-none transition focus:border-gold/60 focus:bg-black/50;
+  }
+
+  .field-error {
+    @apply mt-1 font-body text-xs text-red-400/90;
+  }
+
+  .choice-card {
+    @apply cursor-pointer select-none rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3
+      text-center font-body text-sm text-ivory/80 transition hover:border-gold/40 hover:bg-white/[0.06];
+  }
+
+  .choice-card-active {
+    @apply border-gold bg-gold/10 text-gold shadow-goldGlow;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Wedding Mantra Films",
+  "short_name": "WMF Builder",
+  "description": "Build your custom wedding photography & cinematography package.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0B0B",
+  "theme_color": "#0B0B0B",
+  "icons": []
+}
